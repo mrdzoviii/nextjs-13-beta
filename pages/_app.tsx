@@ -1,6 +1,13 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { Oswald } from "next/font/google";
+import "@/styles/globals.css";
+
+const font = Oswald({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <main className={font.className}>
+      <Component {...pageProps} />
+    </main>
+  );
 }
